@@ -2,35 +2,18 @@ package com.softek.mayo07.servicio;
 
 import com.softek.mayo07.CRUD.CRUDimpl;
 import com.softek.mayo07.modelo.Producto;
+import com.softek.mayo07.repositorio.IGenericoRepositorio;
+import com.softek.mayo07.repositorio.ProductoRepositorio;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ProductoServicioImpl extends CRUDimpl<Producto, Integer> implements IProductoServicio {
+@Autowired
+    private ProductoRepositorio repo;
+@Override
+public IGenericoRepositorio<Producto,Integer> getRepo(){
+    return repo;
+}
 
-    @Override
-    public Producto obtenerProducto(int id) {
-        return null;
-    }
-
-    @Override
-    public List<Producto> listarTodos() {
-        return List.of();
-    }
-
-    @Override
-    public Producto crearProducto(Producto producto) {
-        return null;
-    }
-
-    @Override
-    public Producto actualizarProducto(Producto producto) {
-        return null;
-    }
-
-    @Override
-    public void eliminarProducto(int id) {
-
-    }
 }
